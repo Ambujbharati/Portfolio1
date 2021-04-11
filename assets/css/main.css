@@ -109,6 +109,138 @@ input, select, textarea {
 			transition: none !important;
 		}
 
+
+
+/*Skills Bar Styling*/
+
+.skills_bar{
+	margin: 20px 0;
+}
+
+.skills_bar .skills_info{
+	margin-bottom: 5px;
+}
+
+.skills_bar .skills_info span{
+	font-size: 17px;
+	font-weight: 500;
+	opacity: 0;
+	animation: showText2 0.5s 1s linear forwards;
+}
+
+@keyframes showText2{
+	100%{
+		opacity: 1;
+	}
+}
+
+.skills_bar .progress_line{
+	position: relative;
+	height: 10px;
+	width: 100%;
+	background: #f0f0f0;
+	transform: scaleX(0);
+	transform-origin: left;
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.05),
+	                  0px 1px rgba(255,255,255,0.8);
+	animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.skills_bar .progress_line span{
+	height: 100%;
+	width: 80%;
+	background: #6665ee;
+	position: absolute;
+    border-radius: 0 5px 5px 0;
+    transform: scaleX(0);
+	transform-origin: left;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+@keyframes animate{
+	100%{
+		transform: scaleX(1);
+	}
+}
+
+.progress_line.c span{
+	width: 70%;
+}
+.progress_line.dsa span{
+	width: 30%;
+}
+.progress_line.web span{
+	width: 50%;
+}
+.progress_line.graphics span{
+	width: 60%;
+}
+.progress_line.seo span{
+	width: 60%;
+}
+
+
+.skills_bar .progress_line span::before{
+	position: absolute;
+	content: "";
+	right: 0;
+	top: -10px;
+	height: 0;
+	width: 0;
+	border: 7px solid transparent;
+	border-bottom-width: 0;
+	border-right-width: 0;
+	border-top-color: #000;
+	opacity: 0;
+	animation: showText 0.5s 1.5s linear forwards;
+}
+
+.skills_bar .progress_line span::after{
+	position: absolute;
+	right: 0;
+	top: -28px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 500;
+	background: #000;
+	padding: 1px 8px;
+	border-radius: 3px;
+	opacity: 0;
+	animation: showText 0.5s 1.5s linear forwards;
+}
+
+@keyframes showText{
+	100%{
+		opacity: 1;
+	}
+}
+
+
+.progress_line.c span::after{
+	content: "70%";
+}
+.progress_line.dsa span::after{
+	content: "30%";
+}
+.progress_line.web span::after{
+	content: "50%";
+}
+.progress_line.graphics span::after{
+	content: "60%";
+}
+.progress_line.seo span::after{
+	content: "60%";
+}
+
+
+/*Contact Info*/
+.box{
+	display: grid;
+    grid-template-columns: 15px 1fr;
+    grid-gap: 10px;
+}
+
+
 /* Type */
 
 	html {
